@@ -28,7 +28,7 @@ function updateAll() {
     // map each line to an <li> element
     const listItems = rules
         .split("\n")
-        .map((line) => `<li class="list-group-item rules" style="background-color: none; font-size: 24px;">${line}</li>`)
+        .map((line) => `<li class="list-group-item rules" style="background-color: none; font-size: 22px;">${line}</li>`)
         .join("\n");
 
     players = [];
@@ -88,7 +88,7 @@ function updateAll() {
         players = players.sort((a, b) => a.name.localeCompare(b.name));
 
         const playerListItems = players
-            .map((line) => `<li class="list-group-item players ${line.online ? "text-online" : "text-offline"}" style="background-color: none; font-size: 20px;">${line.online ? '<span class="position-absolute top-50 start-90 translate-middle p-2 bg-success border border-light rounded-circle"></span>' : '<span class="position-absolute top-50 start-90 translate-middle p-2 bg-danger border border-light rounded-circle"></span>'} <span>&nbsp;&nbsp;</span> ${line.name} ${line.nickname != "" ? `(${line.nickname})` : ""}</li>`)
+            .map((line) => `<li class="list-group-item players ${line.online ? "text-online" : "text-offline"}" style="background-color: none; font-size: 18px;">${line.online ? '<span class="position-absolute top-50 start-90 translate-middle p-2 bg-success border border-light rounded-circle"></span>' : '<span class="position-absolute top-50 start-90 translate-middle p-2 bg-danger border border-light rounded-circle"></span>'} <span>&nbsp;&nbsp;</span> ${line.name} ${line.nickname != "" ? `(${line.nickname})` : ""}</li>`)
             .join("\n");
 
             fs.readdir("server_data/plugins/Essentials/warps", (err, files) => {
@@ -109,7 +109,7 @@ function updateAll() {
                 warps = warps.sort((a, b) => a.localeCompare(b));
 
                 const warpListItems = warps
-                .map((line) => `<li class="list-group-item warps" style="background-color: none; font-size: 20px;">${line}</li>`)
+                .map((line) => `<li class="list-group-item warps" style="background-color: none; font-size: 18px;">${line}</li>`)
                 .join("\n");
 
                 nodeHtmlToImage({
@@ -126,13 +126,13 @@ function updateAll() {
                                         border-width: 5px !important;
                                     }
                                     .rules {
-                                        font-size: 24px !important;
+                                        font-size: 22px !important;
                                     }
                                     .players {
-                                        font-size: 20px !important;
+                                        font-size: 18px !important;
                                     }
                                     .warps {
-                                        font-size: 20px !important;
+                                        font-size: 18px !important;
                                     }
                                     h1 {
                                         font-size: 72px !important;
